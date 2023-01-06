@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@use './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+h1 {
+  font-size: 50px;
+  color: $main-black-font;
+}
+
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
