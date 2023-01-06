@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@use './variables.scss';
+@import './variables.scss';
 
 * {
   margin: 0;
@@ -17,4 +17,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.page__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }

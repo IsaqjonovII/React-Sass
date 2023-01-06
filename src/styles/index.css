@@ -15,4 +15,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.page__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }/*# sourceMappingURL=index.css.map */
