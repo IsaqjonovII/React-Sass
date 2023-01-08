@@ -22,7 +22,7 @@ const Shop = () => {
           ({ id, title, price, image, dividedpayment, label }) => (
             <Link className="product__link" to={"/products/" + id} key={id}>
               <Card
-               
+
                 id={id}
                 title={title}
                 price={price}
