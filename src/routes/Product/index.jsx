@@ -1,11 +1,64 @@
-import React from 'react'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { PRODUCTS__DATA } from "../../mocks/data";
+import "./style.css";
 
 const Product = () => {
-  return (
-    <div>
-      <h1>Single product</h1>
-    </div>
-  )
-}
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
 
-export default Product
+  useEffect(() => {
+    const filteredproduct = PRODUCTS__DATA.filter((pro) => pro.id === +id);
+
+    setProduct(filteredproduct);
+  }, [id]);
+
+  const plans = ["3 months", "6 months", "12 months", "24 months"];
+
+  return (
+    <div className="product__page__container">
+      {product.map(({ id, title, price, image, label, dividedpayment }) => (
+        <div className="product__container" key={id}>
+          <p className="breadcrumb">
+            Products / Shop Now / <span>{title}</span>
+          </p>
+
+          <h2 className="product__title">{title}</h2>
+
+          <div className="product__info__wrapper">
+            <div className="product__img__container">
+              <img className="product__img" src={image} alt="" />
+              <div className="labels__container">
+                {label.map((l) => (
+                  <img src={l} alt="" />
+                ))}
+              </div>
+            </div>
+
+            <div className="product__info">
+              <div className="info">
+                <p>Price</p>
+                <h3 className="product__price">{price}</h3>
+              </div>
+              <div className="info">
+                <p>
+                  Total price (with markup){" "}
+                  <div className="label__btn">From {dividedpayment}</div>{" "}
+                </p>
+              </div>
+              <div className="info">
+                <div className="plans">
+                  {plans.map((plan, index) => (
+                    <button key={index}>{plan}</button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Product;
