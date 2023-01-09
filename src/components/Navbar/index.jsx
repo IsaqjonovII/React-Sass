@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>
         <div className="user flex">
           <span>User profile</span>
-          <FaUser className='user__icon'/>
+          <FaUser className='user__icon' />
         </div>
       </div>
     </div>

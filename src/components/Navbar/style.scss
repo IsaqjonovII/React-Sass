@@ -55,15 +55,13 @@
   font-size: 25px;
 }
 
-
 @media screen and (max-width: 900px) {
-    
-    .user__wrapper {
-        max-width: 200px;
-    }
-    
-    .user {
-        width: 90%;
-        padding: 0 5px;
-    }
+  .user__wrapper {
+    max-width: 200px;
+  }
+
+  .user {
+    width: 90%;
+    padding: 0 5px;
+  }
 }
