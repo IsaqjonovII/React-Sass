@@ -6,14 +6,13 @@ import "./style.css";
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+  const [buttonId, setButtonId] = useState(0);
 
   useEffect(() => {
     const filteredproduct = PRODUCTS__DATA.filter((pro) => pro.id === +id);
 
     setProduct(filteredproduct);
   }, [id]);
-  // const priceWithMarkup = 
-  console.log(product[0]?.price);
   const plans = ["3 months", "6 months", "12 months", "24 months"];
 
   return (
@@ -44,17 +43,33 @@ const Product = () => {
               <div className="info">
                 <p className="flex">
                   Total price (with markup){" "}
-                <span className="label__button">From {dividedpayment}</span>{" "}
+                  <span className="label__button">From ${dividedpayment}</span>{" "}
                 </p>
                 <h3>${price}</h3>
               </div>
               <div className="info">
                 <div className="plans">
                   {plans.map((plan, index) => (
-                    <button key={index}>{plan}</button>
+                    <button
+                      key={index}
+                      className={index === buttonId ? "active__btn plan__btn" : "plan__btn"}
+                      onClick={() => setButtonId(index)}
+                    >
+                      {plan}
+                    </button>
                   ))}
                 </div>
-                <p className="markup">Markup {} %</p>
+                <p className="markup">Markup { } %</p>
+              </div>
+
+              <div className="info">
+                <p>General info</p>
+                <ul className="info__collection">
+                  <li>Made of glass (classic)</li>
+                  <li>Standard: 2G, 3G, 4G (LTE), 5G</li>
+                  <li>Operating system: Android 11</li>
+                </ul>
+                <a href="#nowhere">See more</a>
               </div>
             </div>
           </div>

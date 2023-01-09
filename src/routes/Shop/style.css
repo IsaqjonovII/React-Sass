@@ -84,4 +84,23 @@
   color: #fff;
   border-radius: 0 20px 20px 0;
   background-color: #00c48c;
+}
+
+@media screen and (max-width: 1300px) {
+  .product__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .shop__container {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .product__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 650px) {
+  .product__wrapper {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=style.css.map */
